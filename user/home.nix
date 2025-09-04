@@ -15,6 +15,7 @@
     ./shell/cli.nix # Various CLI/TUI apps
     (./wm + ("/" + userSettings.wm) + ".nix") # window manager selected in flake
     ./app/razer/polychromatic.nix
+    ./app/nh/nh.nix # Nix helper script
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
