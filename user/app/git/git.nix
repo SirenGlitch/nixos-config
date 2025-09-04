@@ -1,6 +1,11 @@
 { userSettings, ... }:
 
 {
+
+  imports = [
+    ./lazygit.nix # Enables lazygit
+  ];
+
   programs.git = {
     enable = true;
     userEmail = userSettings.email;
