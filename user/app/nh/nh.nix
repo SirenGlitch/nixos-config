@@ -1,8 +1,8 @@
-{ userSettings, ... }:
+{ config, ... }:
 
 {
   programs.nh = {
     enable = true;
-    flake = userSettings.dotfilesDir;
+    flake = config.home.homeDirectory + "./.dotfiles";
   };
 }
