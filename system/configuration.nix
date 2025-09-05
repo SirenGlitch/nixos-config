@@ -139,6 +139,8 @@
     kdePackages.sddm-kcm
     nixfmt-rfc-style
     userSettings.fontPkg
+    nh
+    nix-output-monitor
   ];
 
   virtualisation.vmVariant = {
