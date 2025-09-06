@@ -16,6 +16,7 @@
     (./wm + ("/" + userSettings.wm) + ".nix") # window manager selected in flake
     ./app/razer/polychromatic.nix
     ./app/nh/nh.nix # Nix helper script
+    ./app/nvim/nvim.nix # Neovim configuration
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
