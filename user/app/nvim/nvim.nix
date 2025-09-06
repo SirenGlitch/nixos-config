@@ -4,6 +4,9 @@
 
   imports = [
     inputs.nixvim.homeModules.nixvim
+    ./plugins
+    ./keymaps.nix
+    ./options.nix
   ];
 
   home.packages = with pkgs; [
