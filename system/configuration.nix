@@ -15,20 +15,22 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     (./wm + ("/" + userSettings.wm) + ".nix")
-    ./hardware/razer.nix
+    # ./hardware/razer.nix
+    ./persistence.nix
+    ./hardware/chromebook/chromebook.nix
   ];
 
   # Bootloader
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
   boot.loader = {
     grub = {
       enable = true;
       useOSProber = true;
       copyKernels = true;
-      efiSupport = true;
+      # efiSupport = true;
       fsIdentifier = "uuid";
-      device = "nodev";
+      device = "/dev/mmcblk1";
       default = "saved";
       extraEntries = ''
         menuentry "Reboot" {
@@ -42,7 +44,7 @@
   };
 
   # Use latest kernel.
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = systemSettings.hostname; # Define your hostname.
 
@@ -80,12 +82,12 @@
   hardware.cpu.intel.updateMicrocode = true;
 
   # Nvidia open drivers
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    open = true;
-    powerManagement.enable = true;
-  };
+  # hardware.graphics.enable = true;
+  # services.xserver.videoDrivers = [ "nvidia" ];
+  # hardware.nvidia = {
+  #   open = true;
+  #   powerManagement.enable = true;
+  # };
 
   # Configure console keymap
   console.keyMap = "uk";
@@ -97,7 +99,20 @@
   hardware.bluetooth.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.libinput = {
+    enable = true;
+
+    touchpad = {
+      # Enable tap-to-click
+      tapping = true;
+      # Enable 1/2/3-finger taps for left/right/middle click
+      tappingButtonMap = "lrm";
+    };
+  };
+
+  users.mutableUsers = false;
+
+  users.users.root.initialPassword = "hunter2";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userSettings.username} = {
@@ -107,6 +122,7 @@
       "networkmanager"
       "wheel"
     ];
+    initialPassword = "hunter2";
     packages = with pkgs; [
       kdePackages.kate
       #  thunderbird
@@ -136,8 +152,7 @@
     git
     nil
     mpv
-    kdePackages.sddm-kcm
-    nixfmt-rfc-style
+    nixfmt
     userSettings.fontPkg
     nh
     nix-output-monitor

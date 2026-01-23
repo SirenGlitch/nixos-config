@@ -14,9 +14,10 @@
     ./app/git/git.nix # git configuration
     ./shell/cli.nix # Various CLI/TUI apps
     (./wm + ("/" + userSettings.wm) + ".nix") # window manager selected in flake
-    ./app/razer/polychromatic.nix
+    # ./app/razer/polychromatic.nix
     ./app/nh/nh.nix # Nix helper script
     ./app/nvim/nvim.nix # Neovim configuration
+    ./persistence.nix # Persistent storage configuration
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -26,20 +27,17 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+  home.packages = [ ];
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
+  home.pointerCursor = {
+    enable = true;
+    size = 24;
+    gtk.enable = true;
+    hyprcursor.enable = true;
+    x11.enable = true;
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors-dark";
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -56,13 +54,11 @@
   # or
   #
   #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
   # or
-  #
   #  /etc/profiles/per-user/frazer/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

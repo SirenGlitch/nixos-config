@@ -13,4 +13,14 @@
       variant = "";
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    # Clipboard/screen-cap stuff
+    wl-clipboard
+    clipse
+    grim
+    slurp
+    wayfreeze
+    satty
+  ];
 }

@@ -19,6 +19,10 @@
     krdp
   ];
 
+  environment.systemPackages = with pkgs; [
+    kdePackages.sddm-kcm
+  ];
+
   # Configure X11
   services.xserver = {
     enable = true;
