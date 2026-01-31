@@ -8,6 +8,9 @@ in
   programs.zsh = {
     enable = true;
     shellAliases = myAliases;
+    setOptions = [
+      "EMACS"
+    ];
   };
 
   # bash configuration
