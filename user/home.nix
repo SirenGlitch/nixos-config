@@ -17,6 +17,7 @@
     # ./app/razer/polychromatic.nix
     ./app/nh/nh.nix # Nix helper script
     ./app/nvim/nvim.nix # Neovim configuration
+    ./app/kitty/kitty.nix # Kitty configuration
     ./persistence.nix # Persistent storage configuration
   ];
 

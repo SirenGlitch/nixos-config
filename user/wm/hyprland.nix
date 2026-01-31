@@ -2,6 +2,7 @@
   config,
   userSettings,
   pkgs,
+  lib,
   ...
 }:
 
@@ -168,7 +169,7 @@
 
     # Should roughly follow standard hyprland.conf syntax in here + semicolons and equals signs
     # Use something or other (my own hands?) to port WHITELIGHTNING config to nix
-    settings = {
+    settings = lib.mkForce {
       "$mainMod" = "SUPER";
       "$terminal" = "${pkgs.kitty}/bin/kitty";
       "$fileManager" = "${pkgs.yazi}/bin/yazi";

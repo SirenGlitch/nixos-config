@@ -18,6 +18,7 @@
     # ./hardware/razer.nix
     ./persistence.nix
     ./hardware/chromebook/chromebook.nix
+    ./stylix.nix
   ];
 
   # Bootloader

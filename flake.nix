@@ -7,6 +7,7 @@
       self,
       home-manager,
       impermanence,
+      stylix,
       ...
     }:
     let
@@ -73,6 +74,7 @@
         ${systemSettings.hostname} = lib.nixosSystem {
           modules = [
             impermanence.nixosModules.impermanence
+            stylix.nixosModules.stylix
             ./system/configuration.nix
             home-manager.nixosModules.home-manager
             {
@@ -128,6 +130,11 @@
         nixpkgs.follows = "";
         home-manager.follows = "";
       };
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }
