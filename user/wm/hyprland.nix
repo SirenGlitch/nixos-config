@@ -240,7 +240,7 @@
         "$mainMod SHIFT ALT, B, Browser (private), exec, ${pkgs.uwsm}/bin/uwsm-app -- $browser --private-window"
         "$mainMod SHIFT, D, Discord, exec, ${pkgs.uwsm}/bin/uwsm-app -- ${pkgs.vesktop}/bin/vesktop"
         "$mainMod SHIFT, M, Music, exec, bash ~/.config/hypr/scripts/launch-or-focus spotify"
-        "$mainMod SHIFT, N, Editor, exec, ${pkgs.uwsm}/bin/uwsm-app -- $terminal -e ${pkgs.neovim}/bin/nvim"
+        "$mainMod SHIFT, N, Editor, exec, ${pkgs.uwsm}/bin/uwsm-app -- ${pkgs.neovide}/bin/neovide"
         "$mainMod SHIFT, S, Steam, exec, ${pkgs.uwsm}/bin/uwsm-app -- steam"
         "$mainMod SHIFT, T, Activity, exec, $terminal -e ${pkgs.btop}/bin/btop"
         "$mainMod SHIFT, SLASH, Passwords, exec, ${pkgs.uwsm}/bin/uwsm-app -- keepassxc"
