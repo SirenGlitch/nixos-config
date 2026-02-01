@@ -2,6 +2,10 @@
 
 {
 
+  imports = [
+    ./yazi.nix
+  ];
+
   programs.eza = {
     enable = true;
     enableBashIntegration = true;
@@ -26,9 +30,4 @@
     else
       config.programs.zsh.plugins;
 
-  programs.yazi = {
-    enable = true;
-    # flavors =
-    # plugins =
-  };
 }
