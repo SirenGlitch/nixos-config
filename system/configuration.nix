@@ -157,6 +157,7 @@
     userSettings.fontPkg
     nh
     nix-output-monitor
+    jq
   ];
 
   virtualisation.vmVariant = {

@@ -15,7 +15,7 @@
     ".config/hypr/scripts/lock-screen" = {
       executable = true;
       text = ''
-        #!/bin/bash
+        #!/usr/bin/env bash
         # Another day, another ~stolen~ borrowed Omarchy script
 
         # Lock the screen
@@ -28,7 +28,7 @@
     ".config/hypr/scripts/launch-or-focus" = {
       executable = true;
       text = ''
-        #!/bin/bash
+        #!/usr/bin/env bash
         # Shamelessly ~stolen~ borrowed from the omarchy config
 
         if (($# == 0)); then
@@ -37,7 +37,7 @@
         fi
 
         WINDOW_PATTERN="$1"
-        LAUNCH_COMMAND="''${2:-"uwsm-app -- $WINDOW_PATTERN"}"
+        LAUNCH_COMMAND="''${2:-"${pkgs.uwsm}/bin/uwsm-app -- $WINDOW_PATTERN"}"
         WINDOW_ADDRESS=$(hyprctl clients -j | jq -r --arg p "$WINDOW_PATTERN" '.[]|select((.class|test("\\b" + $p + "\\b";"i")) or (.title|test("\\b" + $p + "\\b";"i")))|.address' | head -n1)
 
         if [[ -n $WINDOW_ADDRESS ]]; then
@@ -50,7 +50,7 @@
     ".config/hypr/scripts/cmd-screenshot" = {
       executable = true;
       text = ''
-        #!/bin/bash
+        #!/usr/bin/env bash
         # Omarchy screenshot script adapted to work literally anywhere else
 
         [[ -f ~/.config/user-dirs.dirs ]] && source ~/.config/user-dirs.dirs
@@ -303,9 +303,9 @@
         "$mainMod SHIFT ALT, COMMA, Invoke last notification, exec, ${pkgs.mako}/bin/makoctl restore"
 
         # Captures
-        ", PRINT, Screenshot with editing, exec, bash ~/.config/hypr/scripts/cmd-screenshot"
-        "SHIFT, PRINT, Screenshot to clipboard, exec, bash ~/.config/hypr/scripts/cmd-screenshot smart clipboard"
-        "$mainMod, PRINT, Color picker, exec, pkill ${pkgs.hyprpicker}/bin/hyprpicker || ${pkgs.hyprpicker}/bin/hyprpicker -a"
+        ", XF86Tools, Screenshot with editing, exec, bash ~/.config/hypr/scripts/cmd-screenshot"
+        "SHIFT, XF86Tools, Screenshot to clipboard, exec, bash ~/.config/hypr/scripts/cmd-screenshot smart clipboard"
+        "$mainMod, XF86Tools, Color picker, exec, pkill ${pkgs.hyprpicker}/bin/hyprpicker || ${pkgs.hyprpicker}/bin/hyprpicker -a"
       ];
 
       binde = [
