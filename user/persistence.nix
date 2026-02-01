@@ -13,6 +13,7 @@
         mode = "0700";
       }
       "nixstuff"
+      ".config/vesktop"
     ];
   };
 }
