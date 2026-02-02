@@ -99,6 +99,11 @@
   # Enable Bluetooth support
   hardware.bluetooth.enable = true;
 
+  # Change power button behaviour
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput = {
     enable = true;
