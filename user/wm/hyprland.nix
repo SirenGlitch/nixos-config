@@ -9,7 +9,13 @@
 {
   programs.kitty.enable = true;
 
-  home.packages = [ pkgs.hyprpicker ];
+  home.packages = with pkgs; [
+    hyprpicker
+    grim
+    slurp
+    wayfreeze
+    satty
+  ];
 
   home.file = {
     ".config/hypr/scripts/lock-screen" = {

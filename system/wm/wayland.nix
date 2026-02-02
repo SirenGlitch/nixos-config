@@ -15,12 +15,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Clipboard/screen-cap stuff
+    # Clipboard
     wl-clipboard
-    clipse
-    grim
-    slurp
-    wayfreeze
-    satty
   ];
 }
