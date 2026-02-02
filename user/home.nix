@@ -18,6 +18,7 @@
     ./app/nh/nh.nix # Nix helper script
     ./app/nvim/nvim.nix # Neovim configuration
     ./app/kitty/kitty.nix # Kitty configuration
+    (./app/browser + ("/" + userSettings.browser) + ".nix") # Browser selected in flake
     ./persistence.nix # Persistent storage configuration
   ];
 
