@@ -76,6 +76,13 @@
     LC_TIME = systemSettings.locale;
   };
 
+  # Enable Plymouth
+  boot.plymouth = {
+    enable = true;
+    theme = "blahaj";
+    themePackages = with pkgs; [ plymouth-blahaj-theme ];
+  };
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
