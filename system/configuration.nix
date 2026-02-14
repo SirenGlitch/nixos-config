@@ -120,6 +120,7 @@
       tapping = true;
       # Enable 1/2/3-finger taps for left/right/middle click
       tappingButtonMap = "lrm";
+      clickMethod = "clickfinger"; # Should allow the above to work for clicking, not just tapping
     };
   };
 

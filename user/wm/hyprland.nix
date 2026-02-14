@@ -357,6 +357,7 @@
 
         touchpad = {
           natural_scroll = true;
+          clickfinger_behavior = true;
         };
 
         numlock_by_default = true;
