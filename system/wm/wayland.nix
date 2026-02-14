@@ -1,9 +1,28 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 {
   imports = [
     ./pipewire.nix
   ];
+
+  services.displayManager = {
+    defaultSession = "hyprland-uwsm";
+
+    sddm = {
+      enable = true;
+      # wayland.enable = true;
+    };
+
+    autoLogin = {
+      enable = true;
+      user = userSettings.username;
+    };
+  };
 
   # Configure xwayland
   services.xserver = {
