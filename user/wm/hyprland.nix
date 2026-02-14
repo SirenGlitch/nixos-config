@@ -15,6 +15,8 @@
     slurp
     wayfreeze
     satty
+    btop
+    rofi
   ];
 
   home.file = {
