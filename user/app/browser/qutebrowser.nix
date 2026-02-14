@@ -7,6 +7,11 @@
 }:
 
 {
+  stylix.targets.qutebrowser = {
+    enable = true;
+    fonts.enable = false;
+  };
+
   programs.qutebrowser = {
     enable = true;
     keyBindings = {
