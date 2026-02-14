@@ -163,6 +163,17 @@
 
     hyprpaper = {
       enable = true;
+      settings = {
+        splash = false;
+
+        wallpaper = [
+          {
+            monitor = "";
+            path = config.home.homeDirectory + "/Pictures/house.jpg";
+            fit_mode = "tile";
+          }
+        ];
+      };
     };
 
     clipse = {
