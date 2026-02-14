@@ -152,7 +152,7 @@
   services = {
     swayosd.enable = true;
 
-    # Move to a seperate config, ../services/blah.nix
+    # TODO: Move to a seperate config, ../services/blah.nix
     mako = {
       enable = true;
     };
