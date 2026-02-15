@@ -15,5 +15,9 @@
       "nixstuff"
       ".config/vesktop"
     ];
+
+    files = [
+      ".mozilla/firefox/default/places.sqlite"
+    ];
   };
 }

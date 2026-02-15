@@ -193,7 +193,7 @@
       "$terminal" = "${pkgs.kitty}/bin/kitty";
       "$fileManager" = "${pkgs.yazi}/bin/yazi";
       "$menu" = "${pkgs.rofi}/bin/rofi -show drun";
-      "$browser" = "${pkgs.firefox}/bin/firefox";
+      "$browser" = "${userSettings.browser}";
       "$osdclient" =
         "${pkgs.swayosd}/bin/swayosd-client --monitor \"$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')\"";
 

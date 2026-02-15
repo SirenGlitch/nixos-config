@@ -28,7 +28,7 @@
         # theme = ""; # theme from ./themes/
         wm = "hyprland"; # Selected window manager or DE; must be in both ./user/wm/ and ./system/wm/
         wmType = if ((wm == "hyprland") || (wm == "plasma")) then "wayland" else "x11";
-        browser = "qutebrowser"; # Default browser; must be in ./user/app/browser/
+        browser = "firefox"; # Default browser; must be in ./user/app/browser/
         term = "konsole"; # Default terminal command; doesn't do anything i don't think
         font = "JetBrainsMono Nerd Font"; # Selected font
         fontPkg = pkgs.nerd-fonts.jetbrains-mono; # Font package
@@ -134,6 +134,11 @@
 
     stylix = {
       url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
