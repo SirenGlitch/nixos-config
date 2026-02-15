@@ -7,6 +7,9 @@
 }:
 
 {
+  imports = [
+    ./waybar.nix
+  ];
   programs.kitty.enable = true;
 
   home.packages = with pkgs; [
