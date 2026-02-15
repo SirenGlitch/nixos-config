@@ -17,6 +17,7 @@
     ];
 
     files = [
+      ".local/share/qutebrowser/blocked-hosts"
       ".mozilla/firefox/default/places.sqlite"
     ];
   };
