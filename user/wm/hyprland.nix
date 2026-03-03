@@ -365,6 +365,11 @@
         numlock_by_default = true;
       };
 
+      gesture = [
+        "3, horizontal, workspace"
+	"3, vertical,   special, discord"
+      ];
+
       # https://wiki.hyprland.org/Configuring/Variables/#misc
       misc = {
         key_press_enables_dpms = true;
@@ -469,24 +474,25 @@
         ];
 
         animation = [
-          "global,        1,     10,    default"
-          "border,        1,     5.39,  easeOutQuint"
-          "windows,       1,     4.79,  easeOutQuint"
-          # "windowsIn,     1,     4.1,   easeOutQuint, popin 87%"
-          # "windowsOut,    1,     1.49,  linear,       popin 87%"
-          "fadeIn,        1,     1.73,  almostLinear"
-          "fadeOut,       1,     1.46,  almostLinear"
-          "fade,          1,     3.03,  quick"
-          "layers,        1,     3.81,  easeOutQuint"
-          "layersIn,      1,     4,     easeOutQuint, fade"
-          "layersOut,     1,     1.5,   linear,       fade"
-          "fadeLayersIn,  1,     1.79,  almostLinear"
-          "fadeLayersOut, 1,     1.39,  almostLinear"
-          "workspaces,    1,     3.5,   overshot,     slide"
-          # "workspacesIn,  1,     1.21,  almostLinear, fade"
-          # "workspacesOut, 1,     1.94,  almostLinear, fade"
-          "windows,       1,     3,     overshot,     popin 60%"
-          "zoomFactor,    1,     7,     quick"
+          "global,           1,     10,    default"
+          "border,           1,     5.39,  easeOutQuint"
+          "windows,          1,     4.79,  easeOutQuint"
+          # "windowsIn,        1,     4.1,   easeOutQuint, popin 87%"
+          # "windowsOut,       1,     1.49,  linear,       popin 87%"
+          "fadeIn,           1,     1.73,  almostLinear"
+          "fadeOut,          1,     1.46,  almostLinear"
+          "fade,             1,     3.03,  quick"
+          "layers,           1,     3.81,  easeOutQuint"
+          "layersIn,         1,     4,     easeOutQuint, fade"
+          "layersOut,        1,     1.5,   linear,       fade"
+          "fadeLayersIn,     1,     1.79,  almostLinear"
+          "fadeLayersOut,    1,     1.39,  almostLinear"
+          "workspaces,       1,     3.5,   overshot,     slide"
+          # "workspacesIn,     1,     1.21,  almostLinear, fade"
+          # "workspacesOut,    1,     1.94,  almostLinear, fade"
+	  "specialWorkspace, 1,     3.5,   overshot,     slidevert"
+          "windows,          1,     3,     overshot,     popin 60%"
+          "zoomFactor,       1,     7,     quick"
         ];
       };
 
@@ -551,6 +557,9 @@
         # Clipse
         "float on, match:class clipse"
         "size 622 652, match:class clipse"
+
+	# Vesktop
+	"match:class vesktop, workspace special:discord"
       ];
     };
   };
