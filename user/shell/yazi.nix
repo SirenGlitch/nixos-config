@@ -15,6 +15,8 @@
         show_hidden = true;
       };
     };
+    shellWrapperName = "y";
+    enableZshIntegration = true;
   };
 
   stylix.targets.yazi.enable = true;
