@@ -245,7 +245,7 @@
         "$mainMod, W, Close window, killactive,"
 
         # Control tiling
-        "$mainMod, J, Toggle window split, togglesplit, # dwindle"
+        "$mainMod, J, Toggle window split, layoutmsg, togglesplit, # dwindle"
         "$mainMod, P, Pseudo window, pseudo, # dwindle"
         "$mainMod SHIFT, V, Toggle window floating/tiling, togglefloating,"
         "SHIFT, F11, Force full screen, fullscreen, 0"
@@ -505,6 +505,7 @@
       # https://wiki.hypr.land/Configuring/Variables/#cursor
       cursor = {
         hide_on_key_press = true;
+        zoom_disable_aa = true;
       };
 
       windowrule = [
@@ -551,10 +552,6 @@
         "float on, match:class clipse"
         "size 622 652, match:class clipse"
       ];
-
-      cursor = {
-        zoom_disable_aa = true;
-      };
     };
   };
 }
