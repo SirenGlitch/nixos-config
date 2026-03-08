@@ -8,6 +8,7 @@
       home-manager,
       impermanence,
       stylix,
+      nix-index-database,
       ...
     }:
     let
@@ -75,6 +76,8 @@
           modules = [
             impermanence.nixosModules.impermanence
             stylix.nixosModules.stylix
+            nix-index-database.nixosModules.default
+            { programs.nix-index-database.comma.enable = true; }
             ./system/configuration.nix
             home-manager.nixosModules.home-manager
             {
@@ -139,6 +142,11 @@
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
