@@ -27,10 +27,10 @@
       DontCheckDefaultBrowser = true;
       GenerativeAI = {
         Enabled = false;
-	Chatbot = false;
-	LinkPreviews = false;
-	TabGroups = false;
-	Locked = true;
+        Chatbot = false;
+        LinkPreviews = false;
+        TabGroups = false;
+        Locked = true;
       };
     };
 

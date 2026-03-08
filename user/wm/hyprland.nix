@@ -367,7 +367,7 @@
 
       gesture = [
         "3, horizontal, workspace"
-	"3, vertical,   special, discord"
+        "3, vertical,   special, discord"
       ];
 
       # https://wiki.hyprland.org/Configuring/Variables/#misc
@@ -490,7 +490,7 @@
           "workspaces,       1,     3.5,   overshot,     slide"
           # "workspacesIn,     1,     1.21,  almostLinear, fade"
           # "workspacesOut,    1,     1.94,  almostLinear, fade"
-	  "specialWorkspace, 1,     3.5,   overshot,     slidevert"
+          "specialWorkspace, 1,     3.5,   overshot,     slidevert"
           "windows,          1,     3,     overshot,     popin 60%"
           "zoomFactor,       1,     7,     quick"
         ];
@@ -558,8 +558,8 @@
         "float on, match:class clipse"
         "size 622 652, match:class clipse"
 
-	# Vesktop
-	"match:class vesktop, workspace special:discord"
+        # Vesktop
+        "match:class vesktop, workspace special:discord"
       ];
     };
   };
